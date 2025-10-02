@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frases Motivacionais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌟 Frases Motivacionais</h1>
+    <nav>
+      <button onclick="mostrarAba('frases')">Frases</button>
+      <button onclick="mostrarAba('comentarios')">Comentários</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ABA FRASES -->
+    <section id="frases" class="aba ativa">
+      <p id="frase">Clique no botão para ver uma frase motivacional!</p>
+      <button onclick="novaFrase()">✨ Nova Frase</button>
+    </section>
+
+    <!-- ABA COMENTÁRIOS -->
+    <section id="comentarios" class="aba">
+      <h2>💬 Deixe seu comentário</h2>
+      <form id="comentarioForm">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <textarea id="mensagem" placeholder="Escreva seu comentário..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="listaComentarios"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    function mostrarAba(aba) {
+      document.querySelectorAll(".aba").forEach(el => el.classList.remove("ativa"));
+      document.getElementById(aba).classList.add("ativa");
+    }
+  </script>
+</body>
+</html>
